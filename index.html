@@ -94,27 +94,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 <script>
 
-var user =window.localStorage.getItem("user");
- if(user){
-   user= JSON.parse(user);
-   if(user.email){
-    /*  $('body').show();*/
-     toastr.success("Welcome Ena");
-   }else{
-     $('body').show();
-  /*window.location="login.html";*/
-}
-
-}else{
-  window.location="login.html";
-}
-    /* $('body').show();*/
-
-
-   function logout(){
-    window.localStorage.clear();
-    window.location ="login.html";
- }
 
 
 </script>
