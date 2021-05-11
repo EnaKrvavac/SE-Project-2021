@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>eFlight</title>
+
+  <!-- Custom fonts for this theme -->
+
+<link rel="stylesheet" href="assets/css/spapp.css" />
+<link rel="stylesheet" href="assets/css/select2.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/jquery.dataTables.min.css"/>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link href="css/freelancer.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+</head>
+
+<body style="display:none;">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+
+    <div class="header">
+        <img src="img/fly.png" alt="" />
+        <h1></h1>
+      </div>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded " href="#home">Home</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded " href="#flight">Flight</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#departure">Departure</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#reserve">Reserve Flight</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link
+            py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#logout" onclick="logout();">Logout</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <main id="spapp" role="main">
+      <section id="home">Home</section>
+      <section id="flight"><h1>Flight</h1></section>
+      <section id="departure"><h1>Departure</h1></section>
+      <section id="reserve"><h1>Reserve</h1></section>
+      <section id="logout"><h1></h1></section>
+
+    </main>
+  </body>
+
+    <!--
+    <main id="spapp" role="main">
+    <section id="home" data-load="home.html"></section>
+    <section id="shop" data-load="shop.html"></section>
+    <section id="cart" data-load="cart.html"></section>
+    <section id="about" data-load="about.html"></section>
+    <section id="contact" data-load="contact.html"></section>
+    <section id="error_404"><h1>Page not found</h1></section>
+    </main>
+    -->
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.spapp.js"></script>
+<script src="assets/js/custom.js"></script>
+
+<script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<script>
+
+var user =window.localStorage.getItem("user");
+ if(user){
+   user= JSON.parse(user);
+   if(user.email){
+    /*  $('body').show();*/
+     toastr.success("Welcome Ena");
+   }else{
+     $('body').show();
+  /*window.location="login.html";*/
+}
+
+}else{
+  window.location="login.html";
+}
+    /* $('body').show();*/
+
+
+   function logout(){
+    window.localStorage.clear();
+    window.location ="login.html";
+ }
+
+
+</script>
+
+</html>
