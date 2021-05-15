@@ -27,8 +27,8 @@ $(document).ready(function() {
   });
 
   app.route({
-    view: 'ex2',
-    load: 'ex2.html'
+    view: 'contact',
+    load: 'contact.html'
   });
 
 
