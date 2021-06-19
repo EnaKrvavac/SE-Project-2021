@@ -30,10 +30,7 @@ $(document).ready(function() {
     load: 'contact.html'
   });
 
-  app.route({
-    view: 'registration',
-    load: 'registration.html'
-  });
+  
 
   // run app
   app.run();

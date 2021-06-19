@@ -54,8 +54,10 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">contact</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#registration">registration</a>
-          </li>
+          <a class="nav-link
+          py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#logout" onclick="logout();">Logout</a>
+        </li>
+
 
         </ul>
       </div>
@@ -68,8 +70,7 @@
       <section id="make_appointment"><h1></h1></section>
   <!--    <section id="logout"><h1></h1></section>-->
       <section id="contact"><h1></h1></section>
-      <section id="registration"><h1></h1></section>
-
+      <section id="logout"><h1></h1></section>
 
 
     </main>
@@ -83,4 +84,31 @@
       <script src="assets/jquery/jquery.min.js"></script>
       <script src="code/js/jquery.spapp.js"></script>
       <script src="code/js/custom.js"></script>
+      <script>
+
+var user =window.localStorage.getItem("user");
+ if(user){
+   user= JSON.parse(user);
+   if(user.email){
+    /*  $('body').show();*/
+     toastr.success("Welcome");
+   }else{
+     $('body').show();
+  /*window.location="login.html";*/
+}
+
+}else{
+  window.location="login.html";
+}
+    /* $('body').show();*/
+
+
+   function logout(){
+    window.localStorage.clear();
+    window.location ="login.html";
+ }
+
+
+</script>
+
 </html>
