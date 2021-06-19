@@ -23,7 +23,6 @@ $(document).ready(function() {
   app.route({
     view: 'make_appointment',
     load: 'make_appointment.html'
-
   });
 
   app.route({
@@ -31,8 +30,10 @@ $(document).ready(function() {
     load: 'contact.html'
   });
 
-
-
+  app.route({
+    view: 'registration',
+    load: 'registration.html'
+  });
 
   // run app
   app.run();
