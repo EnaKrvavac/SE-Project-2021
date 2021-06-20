@@ -5,14 +5,42 @@ header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS, PATCH');
 
 require '../vendor/autoload.php';
 require 'config.php';
+require 'dao/DoctorDao.php';
 
 require 'dao/UserDao.php';
 
 use \Firebase\JWT\JWT;
+Flight::register( 'doctor_dao', 'DoctorDao');
 
 Flight::register( 'user_dao', 'UserDao');
 
+Flight::route('GET /doctor', function(){
+ $doctor = Flight::doctor_dao()->get_all();
+  Flight::json($doctor);
+ });
 
+Flight::route('POST /doctor', function(){
+  $request = Flight::request()->data->getData();
+
+  $request['full_name'] = $request['full_name'];
+  $request['gender'] = $request['gender'];
+  $request['phone_number'] = $request['phone_number'];
+  $request['date_of_birth'] = $request['date_of_birth'];
+  $request['address'] = $request['address'];
+  $request['yes_no'] = $request['yes_no'];
+  $request['subject'] = $request['subject'];
+  $request['date'] = $request['date'];
+  $request['time'] = $request['time'];
+  /*unset($request['full_name'], $request['gender'],$request['phone_number'],$request['address']);*/
+  Flight::doctor_dao()->add($request);
+  Flight::json('Appointment has been made');
+});
+
+
+Flight::route('DELETE /doctor/@id', function($id){
+
+Flight::doctor_dao()->delete_doctor($id);
+});
 
 
 
