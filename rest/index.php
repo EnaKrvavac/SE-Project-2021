@@ -69,4 +69,4 @@ Flight::route('POST /login', function(){
 });
 
 Flight::start();
-?>
+
