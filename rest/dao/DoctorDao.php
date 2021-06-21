@@ -12,12 +12,5 @@ public function delete_doctor($doctor_id){
     $query = 'DELETE FROM  '.  $this->table . ' WHERE id = :id';
     return $this->execute($entity, $query);
   }
-
-
-
 }
-
-
-
-
 ?>

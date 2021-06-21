@@ -6,9 +6,8 @@ class BaseDao {
     public function __construct($table_name){
       $this->pdo = new PDO(Config::CONNECTION_STRING, Config::USERNAME, Config::PASSWORD);
       $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
       $this->table_name = $table_name;
-     }
+    }
      protected function execute_query($sql_query, $params){
         $stmt = $this->pdo->prepare($sql_query);
          $stmt->execute($params);
@@ -53,7 +52,5 @@ class BaseDao {
    public function add($entity){
         return $this->execute_insert($entity);
       }
-
-
 }
 ?>
